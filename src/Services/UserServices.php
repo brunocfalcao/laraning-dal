@@ -2,8 +2,8 @@
 
 namespace Laraning\DAL\Services;
 
-use Illuminate\Notifications\Notification;
 use Laraning\DAL\Models\User;
+use Illuminate\Notifications\Notification;
 
 trait UserServices
 {

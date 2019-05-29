@@ -2,9 +2,9 @@
 
 namespace Laraning\DAL\Events;
 
+use Laraning\DAL\Models\SocialTag;
 use Illuminate\Support\Facades\Validator;
 use Laraning\DAL\Exceptions\LaraningException;
-use Laraning\DAL\Models\SocialTag;
 
 trait SeriesEvents
 {

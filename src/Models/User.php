@@ -2,10 +2,10 @@
 
 namespace Laraning\DAL\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laraning\DAL\Services\UserServices;
 use Spatie\Permission\Traits\HasRoles;
+use Laraning\DAL\Services\UserServices;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
