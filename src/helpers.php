@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('delete_files')) {
+if (! function_exists('delete_files')) {
     function delete_files($collection)
     {
         if ($collection->count() > 0) {

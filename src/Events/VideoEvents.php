@@ -2,7 +2,6 @@
 
 namespace Laraning\DAL\Events;
 
-use Illuminate\Support\Facades\DB;
 use Laraning\DAL\Models\SocialTag;
 use Illuminate\Support\Facades\Validator;
 use Laraning\DAL\Exceptions\LaraningException;

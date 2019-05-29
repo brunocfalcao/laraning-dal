@@ -2,9 +2,9 @@
 
 namespace Laraning\DAL\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Laraning\DAL\Events\ModelEvents;
 use Laraning\DAL\Events\VideoEvents;
+use Illuminate\Database\Eloquent\Model;
 use Laraning\DAL\Services\VideoServices;
 
 class Video extends Model
@@ -44,17 +44,17 @@ class Video extends Model
     public function getDurationAttribute($value)
     {
         // Return only the minutes and seconds.
-        return !is_null($value) ? substr($value, 3) : '00:00';
+        return ! is_null($value) ? substr($value, 3) : '00:00';
     }
 
     public function getPublishedAtRfc3339Attribute($value)
     {
-        return str_replace(' ', 'T', $this->attributes['updated_at']) . '+01:00';
+        return str_replace(' ', 'T', $this->attributes['updated_at']).'+01:00';
     }
 
     public function setDurationAttribute($value)
     {
-        $this->attributes['duration'] = !is_null($value) ? '00:'.$value : null;
+        $this->attributes['duration'] = ! is_null($value) ? '00:'.$value : null;
     }
 
     public function scopeNotPublished($query)
