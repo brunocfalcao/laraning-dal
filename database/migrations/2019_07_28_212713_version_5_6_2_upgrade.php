@@ -14,21 +14,21 @@ class Version562Upgrade extends Migration
      */
     public function up()
     {
-        if (!Schema::hasColumn('users', 'allow_notifications')) {
+        if (! Schema::hasColumn('users', 'allow_notifications')) {
             Schema::table('users', function (Blueprint $table) {
                 $table->boolean('allow_notifications')
                       ->after('remember_token')
                       ->default(true);
             });
-        };
+        }
 
-        if (!Schema::hasColumn('videos', 'is_published')) {
+        if (! Schema::hasColumn('videos', 'is_published')) {
             Schema::table('videos', function (Blueprint $table) {
                 $table->boolean('is_published')
                       ->after('series_id')
                       ->default(false);
             });
-        };
+        }
 
         DB::transaction(function () {
             // Update all videos with publish = true.
