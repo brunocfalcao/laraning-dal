@@ -98,5 +98,6 @@ class CreateLaraningSchema extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('laraning_schema');
     }
 }

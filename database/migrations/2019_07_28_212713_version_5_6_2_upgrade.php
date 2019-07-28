@@ -43,16 +43,6 @@ class Version562Upgrade extends Migration
      */
     public function down()
     {
-        if (Schema::hasColumn('users', 'allow_notifications')) {
-            Schema::table('users', function (Blueprint $table) {
-                $table->dropColumn('allow_notifications');
-            });
-        };
-
-        if (Schema::hasColumn('videos', 'is_published')) {
-            Schema::table('videos', function (Blueprint $table) {
-                $table->dropColumn('is_published');
-            });
-        };
+        //
     }
 }
