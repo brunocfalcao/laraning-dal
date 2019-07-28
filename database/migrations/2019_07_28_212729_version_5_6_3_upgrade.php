@@ -1,6 +1,5 @@
 <?php
 
-use Laraning\DAL\Models\Video;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -28,7 +27,7 @@ class Version563Upgrade extends Migration
             Schema::table('videos', function (Blueprint $table) {
                 $table->dropColumn('is_published');
             });
-        };
+        }
 
         // Changes default 'published_at' to null
         if (Schema::hasColumn('videos', 'published_at')) {
@@ -37,14 +36,14 @@ class Version563Upgrade extends Migration
                       ->default(null)
                       ->change();
             });
-        };
+        }
 
         // Drop column 'index'.
         if (Schema::hasColumn('videos', 'index')) {
             Schema::table('videos', function (Blueprint $table) {
                 $table->dropColumn('index');
             });
-        };
+        }
     }
 
     /**
@@ -54,21 +53,21 @@ class Version563Upgrade extends Migration
      */
     public function down()
     {
-        if (!Schema::hasColumn('videos', 'published_at')) {
+        if (! Schema::hasColumn('videos', 'published_at')) {
             Schema::table('videos', function (Blueprint $table) {
                 $table->datetime('published_at')
                       ->after('is_published')
                       ->nullable();
             });
-        };
+        }
 
-        if (!Schema::hasColumn('videos', 'index')) {
+        if (! Schema::hasColumn('videos', 'index')) {
             Schema::table('videos', function (Blueprint $table) {
                 $table->integer('index')
                       ->after('is_published')
                       ->default(1);
             });
-        };
+        }
 
         DB::transaction(function () {
             // Update all videos with publish = true.

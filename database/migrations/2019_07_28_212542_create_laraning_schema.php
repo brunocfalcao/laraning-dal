@@ -80,7 +80,7 @@ class CreateLaraningSchema extends Migration
         // Create super admin user.
         $user = User::create(['name' => env('WAVE_SA_NAME'),
                               'email' => env('WAVE_SA_EMAIL'),
-                              'password' => bcrypt(env('WAVE_SA_PASSWORD'))]);
+                              'password' => bcrypt(env('WAVE_SA_PASSWORD')), ]);
 
         // Create super admin role, and assign it to the user.
         $role = Role::create(['name' => 'super-admin', 'guard_name' => 'wave']);
