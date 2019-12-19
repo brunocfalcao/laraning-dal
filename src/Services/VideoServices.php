@@ -2,10 +2,10 @@
 
 namespace Laraning\DAL\Services;
 
-use Laraning\DAL\Models\User;
-use Laraning\DAL\Models\Video;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
+use Laraning\DAL\Models\User;
+use Laraning\DAL\Models\Video;
 
 trait VideoServices
 {

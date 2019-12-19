@@ -2,9 +2,9 @@
 
 namespace Laraning\DAL\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Laraning\DAL\Events\ModelEvents;
 use Laraning\DAL\Events\VideoEvents;
-use Illuminate\Database\Eloquent\Model;
 use Laraning\DAL\Services\VideoServices;
 
 class Video extends Model

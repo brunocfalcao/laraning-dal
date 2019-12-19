@@ -2,9 +2,9 @@
 
 namespace Laraning\DAL\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Laraning\DAL\Events\ModelEvents;
 use Laraning\DAL\Events\SeriesEvents;
-use Illuminate\Database\Eloquent\Model;
 
 class Series extends Model
 {
